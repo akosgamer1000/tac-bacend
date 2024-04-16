@@ -57,8 +57,8 @@ app.post("/register", async (req,res)=>{
 })
 app.put("/update/:player", async (req,res)=>{
     try{
-        let name=req.params.names
-        const temp= await db.query("UPDATE `tac` SET `name`='?',`win`='?',`loss`='?',`winrate`='?' WHERE name=?"[req.body.name,req.body.win,req.body.loss,req.body.winrate,names]);
+        let name=req.params.player
+        const temp= await db.query("UPDATE `tac` SET `name`='?',`win`='?',`loss`='?',`winrate`='?' WHERE name=?"[req.body.name,req.body.win,req.body.loss,req.body.winrate,name]);
         res.status(202).send()
     }
     catch{
